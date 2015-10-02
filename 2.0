@@ -1,0 +1,6 @@
+a = input().split()
+for f in range(len(a)):
+    a[f]= int(a[f])
+w = a.pop()
+a[0:0]=[w]
+print(a)
