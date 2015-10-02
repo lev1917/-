@@ -1,0 +1,11 @@
+from random import *
+a = open('float_20158.txt','w')
+n = 1000000
+p=[]
+while n>0:
+    t = randint(0, 10000)
+    p.append(t/100)
+    n-=1
+for elem in p:
+    print(elem, end = ' ',file=a)
+a.close()
