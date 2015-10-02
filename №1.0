@@ -1,0 +1,10 @@
+a = input().split()
+for f in range(len(a)):
+    a[f]= int(a[f])
+q = len(a)//2
+i = 0
+while q>0:
+    a[i], a[i+1] = a[i+1], a[i]
+    i+=2
+    q-=1
+print(a)
