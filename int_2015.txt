@@ -1,0 +1,8 @@
+from random import *
+a = open('int_2015.txt','a')
+n = 1000000
+while n>0:
+    i = randint(0, 100)
+    print(i, file=a)
+    n-=1
+a.close()
