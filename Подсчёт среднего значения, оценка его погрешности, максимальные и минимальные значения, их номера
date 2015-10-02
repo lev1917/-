@@ -1,0 +1,23 @@
+t = open('float_20158.txt','r')
+
+A = t.read().split()
+for O in range(len(A)):
+    A[O]=float(A[O])
+
+
+j=sum(A)/len(A)
+k=len(A)
+a=0
+z=0
+while k>0:
+    a+= A[z]/3
+    k-=1
+s=(a/len(A))^0.5
+v = max(A)
+u = min(A)
+m = A.index(v)
+n = A.index(u)
+t.close()
+print(j,s,v,u,m,n)
+
+
