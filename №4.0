@@ -1,0 +1,13 @@
+a = input().split()
+for f in range(len(a)):
+    a[f]= int(a[f])
+i = 0
+q = min(a)
+while max(a)>=q:
+    if a.count(q)>i:
+        i = a.count(q)
+    q+=1
+z=min(a)
+while a.count(z)!=i:
+    z+=1
+print(z)
