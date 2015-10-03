@@ -1,0 +1,15 @@
+a = input().split()
+for f in range(len(a)):
+    a[f]= int(a[f])
+l =len(a)
+if l%2==0:
+    o=(l/2)-1
+else:
+    o=l//2
+i=1
+while o>0:
+    s=a.pop()
+    a[i:i]=[s]
+    i+=2
+    o-=1
+print(a)
