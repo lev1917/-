@@ -1,0 +1,19 @@
+k=int(input())
+i=int(input())
+p=k
+t=[]
+while p>0:
+    t.append(1)
+    p-=1
+if 0<=i<=(k-1):
+    print(1)
+else:
+    o=(i-k)+1
+    while o>0:
+
+        g =sum(t)
+        y=t[1::]
+        y.append(g)
+        t=y
+        o-=1
+    print(g)
