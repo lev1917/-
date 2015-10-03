@@ -1,0 +1,16 @@
+t = open('int_2015.txt')
+a = t.read().split()
+for f in range(len(a)):
+    a[f]= int(a[f])
+h=[]
+for g in range(min(a),(max(a)+1)):
+     h.append(a.count(g))
+d=min(h)
+j=max(h)
+n=min(a)
+while a.count(n)!=d:
+    n+=1
+y=min(a)
+while a.count(y)!=j:
+    y+=1
+print('min=', n,'max=', y)
