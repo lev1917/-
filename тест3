@@ -1,0 +1,15 @@
+__author__ = 'lev'
+import unittest
+import lib
+class LibTest(unittest.TestCase):
+    def test_palindrome_1(self):
+        self.assertTrue(lib.palindrome('aaaaaaaaa'))
+        self.assertTrue(lib.palindrome('a'))
+        self.assertTrue(lib.palindrome('11111211111'))
+
+    def test_2(self):
+        self.assertFalse(lib.palindrome('12'))
+        self.assertFalse(lib.palindrome('21'))
+        self.assertFalse(lib.palindrome('aaaaab'))
+        self.assertFalse(lib.palindrome('aabaaa'))
+unittest.main(verbosity=2)
