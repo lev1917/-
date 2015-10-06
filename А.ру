@@ -1,0 +1,27 @@
+__author__ = 'student'
+mas = open('input.txt','r')
+V = open('output','w')
+f = mas.readline()
+g = mas.readline()
+f = f.rstrip()
+g = g.rstrip()
+a = []
+i=0
+u = len(g)
+while u >1:
+    a.append(g[i])
+    i+=1
+    u-=1
+for d in range(len(a)):
+    a[d]=int(a[d])
+l=min(a)
+t=0
+o=max(a)
+while o>=l:
+    if a.count(l)==2:
+        t=l
+    l+=1
+print(t, file=V)
+
+V.close()
+mas.close()
