@@ -1,0 +1,13 @@
+__author__ = 'lev'
+import unittest
+import lib
+class LibTest(unittest.TestCase):
+    def test_1(self):
+        self.assertFalse(lib.prime(0))
+        self.assertFalse(lib.prime(1))
+        self.assertFalse(lib.prime(4))
+        self.assertFalse(lib.prime(6))
+        self.assertTrue(lib.prime(2))
+        self.assertFalse(lib.prime(-1))
+        self.assertFalse(lib.prime(-2))
+unittest.main(verbosity=2)
