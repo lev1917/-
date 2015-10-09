@@ -1,0 +1,15 @@
+__author__ = 'Lev'
+S=input()
+SK=''
+
+
+if S.find(' ')!=-1:
+      while S.find(' ')!=-1:
+         if S.find(' ')!=-1:
+           S2=S[:S.find(' ')+1]
+           S=S[S.find(' ')+1:]
+           SK+=S2.capitalize()
+      S.capitalize()
+      print(SK+S.capitalize())
+else:
+   print(S.capitalize())
