@@ -1,33 +1,61 @@
 __author__ = 'Home'
-A=[[list(map(int, input().split()))]for t in range(8)]
-def битые_клетки(D):
-    Битые_клетки=[]
-    i=D[0]
-    g=D[1]
-    while i and g in range(9):
-        Битые_клетки.append([i,g])
+A=[]
+L=8
+while L>0:
+    A.append(list(map(int, input().split())))
+    L-=1
+def Bito(D):
+    Bito=[]
+    i=(D[0])
+    g=(D[1])
+    while i and g in range(1,9):
+        Bito.append([i,g])
         i-=1
         g-=1
-    i=D[0]
+    i=int(D[0])
     g=D[1]
-    while i and g in range(9):
-        Битые_клетки.append([i,g])
+    while i and g in range(1,9):
+        Bito.append([i,g])
         i+=1
         g-=1
-    i=D[0]
+    i=int(D[0])
     g=D[1]
-    while i and g in range(9):
-        Битые_клетки.append([i,g])
+    while i and g in range(1,9):
+        Bito.append([i,g])
         i-=1
         g+=1
     i=D[0]
     g=D[1]
-    while i and g in range(9):
-        Битые_клетки.append([i,g])
+    while i and g in range(1,9):
+        Bito.append([i,g])
         i+=1
         g+=1
-    return Битые_клетки
-Bit=[[битые_клетки(A[r])]for r in range(8)]
+    i=D[0]
+    g=D[1]
+    while i  in range(1,9):
+        Bito.append([i,g])
+        i-=1
+    i=D[0]
+    g=D[1]
+    while i  in range(1,9):
+        Bito.append([i,g])
+        i+=1
+    i=D[0]
+    g=D[1]
+    while  g in range(1,9):
+        Bito.append([i,g])
+        g-=1
+    i=D[0]
+    g=D[1]
+    while  g in range(1,9):
+        Bito.append([i,g])
+        g+=1
+    return Bito
+Bit=[]
+r=0
+while r<1:
+    Bit.append(Bito(A[r]))
+    r+=1
 def proverka(H,U):
     def pro(P):
         g=len(H)-1
