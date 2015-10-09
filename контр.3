@@ -1,0 +1,20 @@
+__author__ = 'Home'
+S=input()
+C=int(S[:S.find(':')])
+F=S[S.find(':'):S.find(':')+3]
+if S.find('p')!=-1:
+    if C<12:
+        if C<10:
+            print(0,12+C,F,sep='')
+        else:
+           print(12+C,F,sep='')
+    else:
+        print(C,F,sep='')
+else:
+    if C<12:
+        if C<10:
+            print(0,C,F,sep='')
+        else:
+           print(C,F,sep='')
+    else:
+        print(0,C-12,F,sep='')
