@@ -1,0 +1,56 @@
+__author__ = 'Home'
+A=[[list(map(int, input().split()))]for t in range(8)]
+def битые_клетки(D):
+    Битые_клетки=[]
+    i=D[0]
+    g=D[1]
+    while i and g in range(9):
+        Битые_клетки.append([i,g])
+        i-=1
+        g-=1
+    i=D[0]
+    g=D[1]
+    while i and g in range(9):
+        Битые_клетки.append([i,g])
+        i+=1
+        g-=1
+    i=D[0]
+    g=D[1]
+    while i and g in range(9):
+        Битые_клетки.append([i,g])
+        i-=1
+        g+=1
+    i=D[0]
+    g=D[1]
+    while i and g in range(9):
+        Битые_клетки.append([i,g])
+        i+=1
+        g+=1
+    return Битые_клетки
+Bit=[[битые_клетки(A[r])]for r in range(8)]
+def proverka(H,U):
+    def pro(P):
+        g=len(H)-1
+        while g>=0:
+           if P==H[g]:
+             return False
+             break
+        g-=1
+        return True
+    y=0
+    while y<8:
+        r=pro(A[y])
+        if r==False:
+            return False
+        y+=1
+    return True
+h=0
+f=0
+while h<8:
+    f=proverka(Bit[h],A)
+    if f==False:
+        print('YES')
+        break
+    h+=1
+if f==True:
+    print('NOY')
