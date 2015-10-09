@@ -1,0 +1,12 @@
+__author__ = 'Home'
+n=int(input())
+POS = list(map(int, input().split()))
+minim1=min(POS)
+Num1=POS.index(minim1)
+f=POS.pop(Num1)
+minimum2=min(POS)
+Num2=POS.index(minimum2)
+if Num2>=Num1:
+    print(Num1+1,POS.index(minimum2)+2)
+else:
+    print(Num1+1,POS.index(minimum2)+1)
