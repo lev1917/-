@@ -1,0 +1,52 @@
+__author__ = 'lev'
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x=x
+        self.y=y
+    def __str__(self):
+        return 'x=' + str(self.x) + ','+ 'y=' + str(self.y)
+    def __add__(self, other):
+        return Point(self.x+ other.x,self.y + other.y)
+    def __sub__(self, other):
+        return Point(self.x-other.x,self.y-other.y)
+    def dlina(self):
+        return (self.x**2 + self.y**2)**0.5
+    def __truediv__(self, other):
+        if isinstance(other, int):
+            return Point(self.x/other,self.y/other)
+        if isinstance(other, float):
+            return Point(self.x/other,self.y/other)
+    def __iadd__(self, other):
+        return Point(self.x + other.x,self.y+ other.y)
+    def komplanarnost(self,other):
+        if self.x==other.x==0 or self.y==other.y==0 or self.x/other.x==self.y/self.y:
+            return True
+        return False
+
+
+
+
+n=int(input())
+t=0
+
+Points=[]
+while n>0:
+    S=list(map(float, input().split(sep=',')))
+    j=Point(S[0],S[1])
+    Points.append(j)
+
+    n-=1
+    t+=1
+Pmax=0
+if len(Points)>2:
+  for i in range(len(Points)-2):
+    for y in range(i+1,len(Points)-1):
+        for v in range(y+1,len(Points)):
+            t=Points[y]-Points[i]
+            a=Points[v]-Points[y]
+            C=Points[v]-Points[i]
+            if Point.komplanarnost(t,a)==False:
+                P = Point.dlina(t) + Point.dlina(a) + Point.dlina(C)
+                if P>Pmax:
+                    Pmax=P
+print(Pmax)
