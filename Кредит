@@ -1,0 +1,50 @@
+from decimal import Decimal, getcontext
+getcontext().prec=2
+print('i')
+S=float(input())
+print('o')
+Persent=float(input())/12
+print('p')
+N=12*int(input())
+def Dan_Banku(S,Persent,N):
+    return (S*(Persent+Persent/(((1+Persent)**N)-1)))
+Dan=Dan_Banku(S,Persent,N)
+S1=S
+Z=0
+i=N-1
+while i:
+    Z1=(S1*(1+Persent))-Dan
+    S1=Z
+    i-=1
+def overpay(S,Z,Dan):
+    return float((Dan)*(N-1)+Z(1+(Persent)))
+Overpay=(overpay(S,Z1,Dan))
+def tab(Len,Opr):
+    s=[]
+    while Len:
+        s.append(Len)
+        Len-=Opr
+    return s
+Tab=tab(N,1)
+
+
+Tab1=tab(Overpay-Decimal(Z1(1+Persent)),Dan) + [Z1]
+Tab2=[Dan for i in range(N-1)]+[(Z1*(1+Persent))]
+Tab3=[]
+S1=S
+for i in range(len(Tab2)):
+    A=(S1*float(Tab2[i]))
+    Z=(S1*(1+float(Tab2[i])))-Tab2[i]
+    Tab3.append(Tab2[i]-A)
+    S1=S
+Tab4=[]
+for i in range(N):
+    Tab4.append(Tab2[i]-Tab3[i])
+
+print(Dan)
+print(overpay(S,Z,Dan))
+print(Tab)
+print(Tab1)
+print(Tab2)
+print(Tab3)
+print(Tab4)
