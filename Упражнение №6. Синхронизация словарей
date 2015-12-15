@@ -1,0 +1,53 @@
+q=open('en-ru.txt','w')
+a=open('ru-en.txt','w')
+
+def slovar(fail,ras):
+    #считывает слова и возвращает словарь
+    f=fail.readline()
+    slov={}
+    while f:
+        t=list(f.split(ras))
+        if len(t)==3:
+            slov[t[0]]=t[2]
+        if len(t)==2:
+            slov[t[0]]=t[1]
+    return slov
+E_u=slovar(q,'\t-\t')
+R_e=slovar(a,'\t-\t')
+def vyvernyt_sl(slovar):
+    slov={slovar[sl]: sl for sl in slovar}
+    return slov
+
+def Nev_slovar(slovar,slovar_=vyvernyt_sl(slovar)):
+    #создаёт новый словарь
+    N_s={}
+    Spisok1=[]
+    Spisok2=[]
+    for g in slovar:
+        Spisok1.append(g)
+    for e in slovar_:
+        Spisok2.append(e)
+    for t in Spisok1:
+        if t in Spisok2:
+            N_s[t]=slovar_[t]
+        else:
+            i = Spisok1.index(t)
+            if t>Spisok2[i]:
+                N_s[t]=slovar[t]
+                N_s[Spisok2[i]]=slovar_[Spisok2[i]]
+            else:
+                N_s[Spisok2[i]]=slovar_[Spisok2[i]]
+                N_s[t]=slovar[t]
+    return N_s
+
+
+def vyvod_sl(slovar):
+    #выводит словарь в файл
+    for u in slovar:
+        print(u, ' - ', *slovar(u))
+N_e_u=Nev_slovar(E_u)
+N_u_e=Nev_slovar(R_e)
+print(N_e_u,file=q)
+print(N_u_e,file=a)
+q.close()
+a.close()
